@@ -1,4 +1,4 @@
-package stepik.basicstuct;
+package petrs;
 
 import java.util.ArrayList;
 
