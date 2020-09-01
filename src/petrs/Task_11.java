@@ -15,7 +15,7 @@ public class Task_11 {
         }
 
         for (int i = 0; i < resultArray.length; i++) {
-            System.out.println(resultArray[i]);
+            System.out.print(resultArray[i]);
         }
     }
 }
