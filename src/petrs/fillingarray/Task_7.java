@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Создать массив из n первых чисел Фибоначчи.

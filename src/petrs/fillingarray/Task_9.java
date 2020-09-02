@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Создать массив, каждый элемент которого равен квадрату своего номера.

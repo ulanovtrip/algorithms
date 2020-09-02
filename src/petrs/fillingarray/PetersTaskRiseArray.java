@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 import java.util.ArrayList;
 

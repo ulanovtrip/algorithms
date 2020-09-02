@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Сформировать возрастающий массив из четных чисел.

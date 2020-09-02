@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Создать массив, на четных местах в котором стоят единицы,

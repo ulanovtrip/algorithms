@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Заполнить массив заданной длины различными простыми числами.

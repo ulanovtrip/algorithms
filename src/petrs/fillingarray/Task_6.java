@@ -1,4 +1,4 @@
-package petrs;
+package petrs.fillingarray;
 
 /**
  * Сформировать убывающий массив из чисел, которые делятся на 3.
