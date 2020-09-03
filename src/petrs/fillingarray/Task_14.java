@@ -7,23 +7,21 @@ package petrs.fillingarray;
 public class Task_14 {
     public static void main(String[] args) {
         int[] arrayMoreOne = new int[10];
+        int zero = 0;
+        int one = 1;
         int countZeros = 0;
         int countOnes = 0;
 
         for (int i = 0; i < arrayMoreOne.length; i++) {
-            int randomZeroOreOne = (int) Math.round(Math.random());
 
-            if (countOnes > countZeros) {
-                break;
-            }
+            //if(countOnes > countZeros) break;
 
-            if (randomZeroOreOne == 0) {
-                countZeros++;
-                arrayMoreOne[(int) (1 + Math.random() * 9)] = randomZeroOreOne;
-
-            } else if (randomZeroOreOne == 1) {
+            if (i != arrayMoreOne.length - 1) {
+                arrayMoreOne[(int) (1 + Math.random() * 9)] = one;
                 countOnes++;
-                arrayMoreOne[(int) (1 + Math.random() * 9)] = randomZeroOreOne;
+            } else {
+                arrayMoreOne[(int) (1 + Math.random() * 9)] = zero;
+                countZeros++;
             }
         }
 
