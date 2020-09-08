@@ -1,51 +1,61 @@
 package petrs.fillingarray;
 
+import java.util.*;
+
 /**
  * Заполните массив случайным образом нулями и единицами так, чтобы количество единиц было больше количества нулей.
  */
 
 public class Task_14 {
     public static void main(String[] args) {
-        int[] arrayMoreOne = new int[10];
-        int len = arrayMoreOne.length;
-        int zeros = 0;
+        Random rand = new Random();
+        int sizeArray = 10;
+        int[] outputArray = new int[sizeArray];
+        HashSet<Integer> set = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
         int ones = 0;
-        int diff = 0;
-        int emptyCounts = 0;
-        double OnesMax = 0.01;
-        int OnesCount = (int) (len * OnesMax + Math.random() * len);
+        int zeroes = 0;
+        int emptyCells = 0;
 
-        for (int i = 0; i < OnesCount; i++) {
-            int index = (int) (0 + Math.random() * len);
-            while (arrayMoreOne[index] == 1)
-                index = (int) (0 + Math.random() * len);
-            arrayMoreOne[index] = 1;
-
-
-
-            //int num = (int) (0 + Math.random() * 2);
-
-//            if(num == 1) {
-//                ones += 1;
-//            } else {
-//                zeros += 1;
-//            }
-
-
-
-//            diff = ones - zeros;
-//            emptyCounts = (arrayMoreOne.length) - i;
-//
-//            if(diff + emptyCounts == 1) {
-//                arrayMoreOne[i] = 1;
-//            }
+        for (int i = 0; i < sizeArray; i++) {
+            outputArray[i] = -1;
+            set.add(i);
         }
 
-        for (int i = 0; i < arrayMoreOne.length; i++) {
-            if (i == arrayMoreOne.length - 1) {
-                System.out.println(arrayMoreOne[i]);
+        while (!(zeroes > ones)) {
+
+            Integer[] setOfIndex = set.toArray(new Integer[]{set.size()});
+
+            int randomOneOreZero = (int) (0 + Math.random() * 2);
+            if (randomOneOreZero == 1) {
+                ones++;
             } else {
-                System.out.print(arrayMoreOne[i] + "-");
+                zeroes++;
+            }
+
+            emptyCells = sizeArray - (ones + zeroes);
+
+            int randomArrayCell = rand.nextInt(set.size());
+
+            if (randomOneOreZero == 1) {
+                outputArray[randomArrayCell] = 1;
+                set.remove(randomArrayCell);
+            } else {
+                if (ones - zeroes + emptyCells == 2) {
+                    outputArray[randomArrayCell] = 1;
+                    set.remove(randomArrayCell);
+                } else {
+                    outputArray[randomArrayCell] = 0;
+                    set.remove(randomArrayCell);
+                }
+            }
+        }
+
+        for (int i = 0; i < outputArray.length; i++) {
+            if (i == outputArray.length - 1) {
+                System.out.println(outputArray[i]);
+            } else {
+                System.out.print(outputArray[i] + " | ");
             }
         }
     }
