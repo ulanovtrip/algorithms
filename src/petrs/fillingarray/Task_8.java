@@ -5,24 +5,34 @@ package petrs.fillingarray;
  * Натуральное число, большее единицы, называется простым, если оно делится только на себя и на единицу.
  * Нужно решето Эротосфена.
  * https://habr.com/ru/post/333350/
- *
  */
 
 public class Task_8 {
     public static void main(String[] args) {
-        int length = 998;
-        int p = 2;
-        int[] array = new int[length];
+        int N = 1000;
+        int[] sieve = new int[N];
 
-        for (int i = 0; i < length; i++) {
-            array[i] = i + 2;
+        //i = 2, т.к. 0 и 1 не простые чила
+        for (int i = 2; i < N / 2; i++) {
+            if (sieve[i] == 0) {
+                //вычисление составных чисел
+                for (int j = i * i; j < N; j += i) {
+                    //выставление флага в 1
+                    sieve[j] = 1;
+                }
+            }
         }
 
-        int flag = -1;
-
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-                array[j] = flag;
+        int count = 1;
+        for (int i = 2; i < N; i++) {
+            if(count%10 == 0) {
+                System.out.println();
+                count++;
+            } else {
+                if (sieve[i] == 0){
+                    count++;
+                    System.out.print(i + " ");
+                }
             }
         }
     }

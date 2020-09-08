@@ -7,20 +7,24 @@ package petrs.fillingarray;
 public class Task_13 {
     public static void main(String[] args) {
         int[] randomArray = new int[10];
+        int countOfOnes = 0;
 
         for (int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = (int) (2 + Math.random() * 10);
+            int randomNum = (int) (1 + Math.random() * 9);
+            if(randomNum == 1 && countOfOnes < 2) {
+                countOfOnes += 1;
+                randomArray[i] = randomNum;
+            } else {
+                while (true) {
+                    int newRandomNum = (int) (1 + Math.random() * 9);
+                    if(newRandomNum != 1) {
+                        randomArray[i] = newRandomNum;
+                        break;
+                    }
+                }
+            }
         }
 
-        int firstOne = (int) (2 + Math.random() * 10);
-        int secondOne = 0;
-
-        if (firstOne > 0 && firstOne < randomArray.length) {
-            secondOne = firstOne - 1;
-        }
-
-        randomArray[firstOne] = 1;
-        randomArray[secondOne] = 1;
 
         for (int i = 0; i < randomArray.length; i++) {
             if (i == randomArray.length - 1) {

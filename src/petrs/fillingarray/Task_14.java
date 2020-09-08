@@ -7,22 +7,38 @@ package petrs.fillingarray;
 public class Task_14 {
     public static void main(String[] args) {
         int[] arrayMoreOne = new int[10];
-        int zero = 0;
-        int one = 1;
-        int countZeros = 0;
-        int countOnes = 0;
+        int len = arrayMoreOne.length;
+        int zeros = 0;
+        int ones = 0;
+        int diff = 0;
+        int emptyCounts = 0;
+        double OnesMax = 0.01;
+        int OnesCount = (int) (len * OnesMax + Math.random() * len);
 
-        for (int i = 0; i < arrayMoreOne.length; i++) {
+        for (int i = 0; i < OnesCount; i++) {
+            int index = (int) (0 + Math.random() * len);
+            while (arrayMoreOne[index] == 1)
+                index = (int) (0 + Math.random() * len);
+            arrayMoreOne[index] = 1;
 
-            //if(countOnes > countZeros) break;
 
-            if (i != arrayMoreOne.length - 1) {
-                arrayMoreOne[(int) (1 + Math.random() * 9)] = one;
-                countOnes++;
-            } else {
-                arrayMoreOne[(int) (1 + Math.random() * 9)] = zero;
-                countZeros++;
-            }
+
+            //int num = (int) (0 + Math.random() * 2);
+
+//            if(num == 1) {
+//                ones += 1;
+//            } else {
+//                zeros += 1;
+//            }
+
+
+
+//            diff = ones - zeros;
+//            emptyCounts = (arrayMoreOne.length) - i;
+//
+//            if(diff + emptyCounts == 1) {
+//                arrayMoreOne[i] = 1;
+//            }
         }
 
         for (int i = 0; i < arrayMoreOne.length; i++) {
@@ -32,6 +48,5 @@ public class Task_14 {
                 System.out.print(arrayMoreOne[i] + "-");
             }
         }
-        System.out.println("Zero = " + countZeros + " // " + "Ones = " + countOnes);
     }
 }
