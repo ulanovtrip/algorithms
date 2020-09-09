@@ -8,11 +8,9 @@ import java.util.*;
 
 public class Task_14 {
     public static void main(String[] args) {
-        Random rand = new Random();
         int sizeArray = 10;
         int[] outputArray = new int[sizeArray];
         HashSet<Integer> set = new HashSet<>();
-        List<Integer> list = new ArrayList<>();
         int ones = 0;
         int zeroes = 0;
         int emptyCells = 0;
@@ -22,7 +20,7 @@ public class Task_14 {
             set.add(i);
         }
 
-        while (!(zeroes > ones)) {
+        while (!set.isEmpty()) {
 
             Integer[] setOfIndex = set.toArray(new Integer[]{set.size()});
 
@@ -35,20 +33,23 @@ public class Task_14 {
 
             emptyCells = sizeArray - (ones + zeroes);
 
-            int randomArrayCell = rand.nextInt(set.size());
+            int randomArrayCell = (int) (Math.random() * setOfIndex.length);
+            int cell = setOfIndex[randomArrayCell];
 
             if (randomOneOreZero == 1) {
-                outputArray[randomArrayCell] = 1;
-                set.remove(randomArrayCell);
+                outputArray[cell] = 1;
+                set.remove(cell);
             } else {
                 if (ones - zeroes + emptyCells == 2) {
-                    outputArray[randomArrayCell] = 1;
-                    set.remove(randomArrayCell);
+                    outputArray[cell] = 1;
+                    set.remove(cell);
                 } else {
-                    outputArray[randomArrayCell] = 0;
-                    set.remove(randomArrayCell);
+                    outputArray[cell] = 0;
+                    set.remove(cell);
                 }
             }
+
+            if(ones > zeroes) break;
         }
 
         for (int i = 0; i < outputArray.length; i++) {
