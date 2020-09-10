@@ -1,38 +1,29 @@
 package petrs.analysis;
 
 /**
- * Определите, каких чисел в массиве больше:
- * которые делятся на первый элемент массива или которые делятся на последний элемент массива.
+ * Найдите сумму и произведение элементов массива.
  */
 
 public class Task_23 {
     public static void main(String[] args) {
-        int N = 10;
-        int countDividedByTheFirsElement = 0;
-        int countDividedByTheLastElement = 0;
-        int[] inputArray = new int[N];
+        int N = 20;
+        int sumOfElements = 0;
+        int multiplicationOfElements = 1;
+        int[] array = new int[N];
 
         for (int i = 0; i < N; i++) {
-            inputArray[i] = (int) (1 + Math.random() * N);
-            System.out.print(inputArray[i] + "-");
+            array[i] = i;
         }
 
-        System.out.println();
-        int firstElement = inputArray[0];
-        int lastElement = inputArray[inputArray.length - 1];
-
-        System.out.println("FirstElement = " + firstElement + ", " +
-                "" + "LastElement = " + lastElement);
-
-        for (int i = 1; i < N - 1; i++) {
-            if (inputArray[i] % firstElement == 0) {
-                countDividedByTheFirsElement++;
-            } else if (inputArray[i] % lastElement == 0) {
-                countDividedByTheLastElement++;
-            }
+        for (int i = 0; i < N; i++) {
+            sumOfElements = array[i] + sumOfElements;
         }
 
-        System.out.println("CountDividedByTheFirsElement = " + countDividedByTheFirsElement + "," +
-                " " + "CountDividedByTheLastElement = " + countDividedByTheLastElement);
+        for (int i = 1; i < N; i++) {
+            multiplicationOfElements = array[i] * multiplicationOfElements;
+        }
+
+        System.out.println("Sum = " + sumOfElements);
+        System.out.println("Multiplication = " + multiplicationOfElements);
     }
 }
