@@ -15,11 +15,8 @@ public class Task_23 {
             array[i] = i;
         }
 
-        for (int i = 0; i < N; i++) {
-            sumOfElements = array[i] + sumOfElements;
-        }
-
         for (int i = 1; i < N; i++) {
+            sumOfElements = array[i] + sumOfElements;
             multiplicationOfElements = array[i] * multiplicationOfElements;
         }
 
