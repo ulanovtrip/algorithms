@@ -3,10 +3,12 @@ package petrs;
 public class RandomArray {
 
     private int size = 0;
-    private int[] array;
+    private final int[] array;
+    private int band = 0;
 
-    public RandomArray(int N) {
+    public RandomArray(int N, int band) {
         this.size = N;
+        this.band = band;
         array = new int[size];
     }
 
@@ -16,7 +18,7 @@ public class RandomArray {
 
     public void generate() {
         for (int i = 0; i < size; i++) {
-            array[i] = (int) (Math.random() * size);
+            array[i] = (int) (Math.random() * band);
         }
     }
 
