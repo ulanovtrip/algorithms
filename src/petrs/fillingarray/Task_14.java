@@ -21,35 +21,30 @@ public class Task_14 {
         }
 
         while (!set.isEmpty()) {
-
-            Integer[] setOfIndex = set.toArray(new Integer[]{set.size()});
-
+            Integer[] setOfFreeIndexes = set.toArray(new Integer[]{set.size()});
             int randomOneOreZero = (int) (0 + Math.random() * 2);
-            if (randomOneOreZero == 1) {
-                ones++;
-            } else {
-                zeroes++;
-            }
-
             emptyCells = sizeArray - (ones + zeroes);
 
-            int randomArrayCell = (int) (Math.random() * setOfIndex.length);
-            int cell = setOfIndex[randomArrayCell];
+            //индекс ячейки множества в кот. хранится индекс ячейки массива куда кладём
+            int randomSetCellIndex = (int) (Math.random() * setOfFreeIndexes.length);
+
+            //индекс ячейки массива куда кладём
+            int arrayCellIndex = setOfFreeIndexes[randomSetCellIndex];
 
             if (randomOneOreZero == 1) {
-                outputArray[cell] = 1;
-                set.remove(cell);
+                outputArray[arrayCellIndex] = 1;
+                set.remove(arrayCellIndex);
+                ones++;
             } else {
                 if (ones - zeroes + emptyCells == 2) {
-                    outputArray[cell] = 1;
-                    set.remove(cell);
+                    fillFreeCellsWithOnes(outputArray, set);
+                    break;
                 } else {
-                    outputArray[cell] = 0;
-                    set.remove(cell);
+                    outputArray[arrayCellIndex] = 0;
+                    set.remove(arrayCellIndex);
+                    zeroes++;
                 }
             }
-
-            if(ones > zeroes) break;
         }
 
         for (int i = 0; i < outputArray.length; i++) {
@@ -58,6 +53,14 @@ public class Task_14 {
             } else {
                 System.out.print(outputArray[i] + " | ");
             }
+        }
+    }
+
+    //этим методом добиваем единицами
+    private static void fillFreeCellsWithOnes(int[] array, HashSet<Integer> freeIndexes) {
+        Integer[] arrayOfFreeIndexes = freeIndexes.toArray(new Integer[]{freeIndexes.size()});
+        for (int i = 0; i < arrayOfFreeIndexes.length; i++) {
+            array[arrayOfFreeIndexes[i]] = 1;
         }
     }
 }
