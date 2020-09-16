@@ -33,7 +33,6 @@ public class Task_34 {
             }
         }
 
-
         arrayDouble.printDoubleArray();
         newLine();
         print("countNumMoreThan10Percents = " + countNumMoreThan10Percents);
