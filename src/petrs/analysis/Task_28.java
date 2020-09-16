@@ -14,7 +14,7 @@ public class Task_28 {
         int sumOfFirstAndLastElem;
 
         RandomArray array = new RandomArray(20, 15);
-        array.generate();
+        array.generate(0);
         sumOfFirstAndLastElem = array.getElement(0) + array.getElement(array.getSize() - 1);
 
         for (int i = 0; i < array.getSize(); i++) {
@@ -24,7 +24,7 @@ public class Task_28 {
                 }
             }
         }
-        array.printArray();
+        array.printIntArray();
         newLine();
         print("sumOfFirstAndLastElem = " + sumOfFirstAndLastElem);
         print("sumOfOddNum = " + sumOfOddNum);

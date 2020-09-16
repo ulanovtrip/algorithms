@@ -1,11 +1,14 @@
 package petrs;
 
+import java.util.Random;
+
 public class RandomArray {
 
     private int size = 0;
     private final int[] array;
     private final double[] arrayDouble;
-    private int band = 0;
+    private final int band; //разброс чисел
+    Random random = new Random();
 
     public RandomArray(int N, int band) {
         this.size = N;
@@ -18,25 +21,41 @@ public class RandomArray {
         return size;
     }
 
-    public void generate() {
+    public double getSizeDoubleArray() {
+        return arrayDouble.length;
+    }
+
+    public void generate(int start) {
         for (int i = 0; i < size; i++) {
-            array[i] = (int) (Math.random() * band);
+            array[i] = start + random.nextInt(band);
         }
     }
 
-    public void generateDouble() {
+    public void generateDouble(double start, double end) {
         for (int i = 0; i < size; i++) {
-            arrayDouble[i] = (Math.random() * 10.0);
+            double randomNum = start + random.nextDouble() * end;
+            double roundNum = Math.round(randomNum * 100.0)/100.0; //округлил до 2-х знаков после запятой
+            arrayDouble[i] = roundNum;
         }
     }
 
-    public void printArray() {
+    public void printIntArray() {
         for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + ", ");
+            System.out.print(array[i] + "; ");
+        }
+    }
+
+    public void printDoubleArray() {
+        for (int i = 0; i < arrayDouble.length; i++) {
+            System.out.print(arrayDouble[i] + "; ");
         }
     }
 
     public int getElement(int i) {
         return array[i];
+    }
+
+    public double getElementFromDoubleArray(int element) {
+        return arrayDouble[element];
     }
 }
