@@ -16,8 +16,8 @@ public class Task_33 {
         int sumOfMinAndMax = 0;
 
         RandomArray array = new RandomArray(10, 27);
-        array.generate();
-        array.printArray();
+        array.generate(0);
+        array.printIntArray();
 
         for (int i = 0; i < array.getSize(); i++) {
             if (array.getElement(i) > maximumOfArray) {

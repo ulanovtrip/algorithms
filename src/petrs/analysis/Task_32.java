@@ -13,8 +13,8 @@ public class Task_32 {
         int maximumOfArray = 0;
 
         RandomArray array = new RandomArray(20, 27);
-        array.generate();
-        array.printArray();
+        array.generate(0);
+        array.printIntArray();
 
         for (int i = 0; i < array.getSize(); i++) {
             if(array.getElement(i) > maximumOfArray) {

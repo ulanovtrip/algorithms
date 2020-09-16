@@ -12,8 +12,8 @@ public class Task_27 {
         int sumOfEvenNum = 0;
 
         RandomArray array = new RandomArray(20, 10);
-        array.generate();
-        array.printArray();
+        array.generate(0);
+        array.printIntArray();
 
         for (int i = 0; i < array.getSize(); i++) {
             if (i % 2 == 0) {
