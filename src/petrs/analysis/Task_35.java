@@ -14,18 +14,33 @@ public class Task_35 {
         RandomArray inputArray = new RandomArray(20, 13);
         inputArray.generate(1);
         inputArray.printIntArray();
+        int smallestEvenElement = inputArray.getElement(0);
+        smallestEvenElement = searchMaxOfEven(inputArray, smallestEvenElement);
+        newLine();
+        printSmallestEvenElement(inputArray, smallestEvenElement);
+    }
 
-        int smallestEvenElement = 0;
-
-        for (int i = 0; i < inputArray.getSize(); i++) {
-            if (i == 0) smallestEvenElement = inputArray.getElement(i);
-            if (i % 2 == 0) {
+    private static int searchMaxOfEven(RandomArray inputArray, int smallestEvenElement) {
+        for (int i = 1; i < inputArray.getSize(); i++) {
+            if (inputArray.getSize() == 0) {
+                System.out.println("Array is Empty!");
+                break;
+            }
+            if (inputArray.getElement(i) % 2 == 0) {
                 if (inputArray.getElement(i) < smallestEvenElement) {
                     smallestEvenElement = inputArray.getElement(i);
                 }
             }
         }
-        newLine();
-        print("smallestEvenElement= " + smallestEvenElement);
+        return smallestEvenElement;
+    }
+
+    private static void printSmallestEvenElement(RandomArray inputArray, int smallestEvenElement) {
+        if (smallestEvenElement == inputArray.getElement(0)) {
+            System.out.println("Array consist only odd elements");
+        } else {
+            newLine();
+            print("smallestEvenElement= " + smallestEvenElement);
+        }
     }
 }

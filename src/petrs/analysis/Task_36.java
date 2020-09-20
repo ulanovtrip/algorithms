@@ -14,17 +14,29 @@ public class Task_36 {
         RandomArray inputArray = new RandomArray(13, 33);
         inputArray.generate(1);
         inputArray.printIntArray();
-        int biggestThatIsDivisibleBy3 = -1;
+        int biggestThatIsDivisibleBy3;
+        biggestThatIsDivisibleBy3 = -1;
 
+        biggestThatIsDivisibleBy3 = findBiggestThatIsDivisibleBy3(inputArray, biggestThatIsDivisibleBy3);
+        newLine();
+        print("biggestThatIsDivisibleBy3 = " + biggestThatIsDivisibleBy3);
+    }
+
+    private static int findBiggestThatIsDivisibleBy3(RandomArray inputArray, int biggestThatIsDivisibleBy3) {
         for (int i = 0; i < inputArray.getSize(); i++) {
+            if (inputArray.getSize() == 0) {
+                System.out.println("input array is Empty!");
+            }
             if (i % 2 != 0 && inputArray.getElement(i) % 3 == 0) {
                 if (inputArray.getElement(i) > biggestThatIsDivisibleBy3) {
                     biggestThatIsDivisibleBy3 = inputArray.getElement(i);
                 }
             }
         }
-
-        newLine();
-        print("biggestThatIsDivisibleBy3 = " + biggestThatIsDivisibleBy3);
+        if (biggestThatIsDivisibleBy3 == -1) {
+            newLine();
+            System.out.println("The array doesn't contains multiples of three.");
+        }
+        return biggestThatIsDivisibleBy3;
     }
 }
