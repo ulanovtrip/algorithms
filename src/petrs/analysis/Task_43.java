@@ -10,10 +10,8 @@ public class Task_43 {
     public static void main(String[] args) {
         RandomArray inputArithmetic = new RandomArray(5, 10);
         RandomArray inputGeometric = new RandomArray(6, 10);
-
         inputArithmetic.generateArithmeticProgression(1);
         inputGeometric.generateGeometricProgression(2);
-
         System.out.println(isArithmetic(inputArithmetic, 1));
         System.out.println(isGeometric(inputGeometric));
     }
