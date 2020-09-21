@@ -16,7 +16,6 @@ public class Task_43 {
         System.out.println(isGeometric(inputGeometric));
     }
 
-
     private static boolean isArithmetic(RandomArray array, int stepProgression) {
         if (array.getSize() < 2) return false;
 
