@@ -13,7 +13,7 @@ public class Task_15 {
         Random random = new Random();
         HashSet<Integer> set = new HashSet<>();
         int treeOreFour = 3 + random.nextInt(2);
-        int[] outputArray = new int[10];
+        int[] outputArray = new int[15];
         int twos = 0;
         int threes = 0;
         int emptyCells;
@@ -40,23 +40,23 @@ public class Task_15 {
             int randomNumber = 2 + random.nextInt(7);
             int randomIndexes = random.nextInt(arrayOfFreeIndex.length);
             int randomCellIndex = arrayOfFreeIndex[randomIndexes];
-            emptyCells = arrayOfFreeIndex.length - (twos + threes);
+            emptyCells = (arrayOfFreeIndex.length - 1) - (twos + threes);
 
             if (randomNumber == 2) {
                 outputArray[randomCellIndex] = 2;
                 set.remove(randomCellIndex);
                 twos++;
-            } else if (randomNumber == 3) {
-                threes++;
-                if ((twos - threes + emptyCells < 0)) {
+            } else {
+                if (randomNumber == 3) threes++;
+                if (twos - threes + emptyCells < 0) {
                     Integer[] arrayOfFreeIndexes = set.toArray(new Integer[]{set.size()});
                     for (int i = 0; i < arrayOfFreeIndexes.length; i++) {
                         outputArray[arrayOfFreeIndexes[i]] = 2;
                     }
+                } else {
+                    outputArray[randomCellIndex] = randomNumber;
+                    set.remove(randomCellIndex);
                 }
-            } else {
-                outputArray[randomCellIndex] = randomNumber;
-                set.remove(randomCellIndex);
             }
         }
 
