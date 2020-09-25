@@ -1,4 +1,5 @@
 package petrs.analysis;
+
 import petrs.IntegerArray;
 import petrs.Utils;
 
@@ -28,18 +29,18 @@ public class Task_47 {
         int[] outArray = new int[integerArray.getSize()];
 
         for (int i = 0; i < integerArray.getSize(); i = nextStartPosition) {
-            if(i + countOfFoundNumbers > integerArray.getSize() - 1) {
+            if (i + countOfFoundNumbers > integerArray.getSize() - 1) {
                 maximum = countOfFoundNumbers;
                 break;
             }
-            countOfFoundNumbers++;
+            countOfFoundNumbers = 1;
             for (int j = i + 1; j < integerArray.getSize(); j++) {
-                if(integerArray.getElement(i) == integerArray.getElement(j)) {
+                if (integerArray.getElement(i) == integerArray.getElement(j)) {
                     countOfFoundNumbers++;
                 }
-                if(integerArray.getElement(i+countOfFoundNumbers) > integerArray.getElement(i)) {
+                if (integerArray.getElement(i + countOfFoundNumbers) > integerArray.getElement(i)) {
                     nextStartPosition += countOfFoundNumbers;
-                    if(countOfFoundNumbers > maximum) {
+                    if (countOfFoundNumbers > maximum) {
                         maximum = countOfFoundNumbers;
                         outArray[i] = maximum;
                         countOfFoundNumbers = 0;
@@ -54,7 +55,7 @@ public class Task_47 {
         }
 
         for (int i = 0; i < outArray.length - 1; i++) {
-            if(outArray[i] > maximum) {
+            if (outArray[i] > maximum) {
                 maximum = outArray[i];
             }
         }
