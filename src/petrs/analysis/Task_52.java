@@ -28,10 +28,11 @@ public class Task_52 {
         Arrays.sort(numbers);
         int countOfRepeating = 0;
         for (int i = 0; i < numbers.length; i++) {
+            if(countOfRepeating != 0) break;
             for (int j = i + 1; j < numbers.length; j++) {
                 if (numbers[i] == numbers[j]) {
                     countOfRepeating++;
-
+                    break;
                 }
             }
         }
