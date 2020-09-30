@@ -9,4 +9,11 @@ public class Utils {
     public static void print(String text) {
         System.out.println(text);
     }
+
+    public static void printArray(String text, int[] array) {
+        System.out.println(text);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(" " + array[i]);
+        }
+    }
 }
