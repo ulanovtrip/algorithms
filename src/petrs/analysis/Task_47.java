@@ -15,50 +15,34 @@ public class Task_47 {
         inputArray.print();
         Utils.newLine();
         int countOfNumbers = 0;
-        countOfNumbers = countMaxCountOfEqualsElement(inputArray, countOfNumbers);
+        countOfNumbers = countMaxCountOfEqualsElement(inputArray);
         Utils.newLine();
         System.out.println(countOfNumbers);
     }
 
-    private static int countMaxCountOfEqualsElement(IntegerArray integerArray, int countOfNumbers) {
-        int maximum = 1;
-        int countOfFoundNumbers = 0;
-        int nextStartPosition = 0;
+    private static int countMaxCountOfEqualsElement(IntegerArray integerArray) {
         integerArray.sort();
-        integerArray.print();
-        int[] outArray = new int[integerArray.getSize()];
+        int startElement = integerArray.getElement(0);
+        int countOfFindNumbers = 1;
+        int maxValueNumbers = 0;
 
-        for (int i = 0; i < integerArray.getSize(); i = nextStartPosition) {
-            if (i + countOfFoundNumbers > integerArray.getSize() - 1) {
-                maximum = countOfFoundNumbers;
-                break;
-            }
-            countOfFoundNumbers = 1;
-            for (int j = i + 1; j < integerArray.getSize(); j++) {
-                if (integerArray.getElement(i) == integerArray.getElement(j)) {
-                    countOfFoundNumbers++;
-                }
-                if (integerArray.getElement(i + countOfFoundNumbers) > integerArray.getElement(i)) {
-                    nextStartPosition += countOfFoundNumbers;
-                    if (countOfFoundNumbers > maximum) {
-                        maximum = countOfFoundNumbers;
-                        outArray[i] = maximum;
-                        countOfFoundNumbers = 0;
-                        break;
-                    }
-                    maximum = countOfFoundNumbers;
-                    outArray[i] = maximum;
-                    countOfFoundNumbers = 0;
-                    break;
+        for (int i = 1; i < integerArray.getSize(); i++) {
+            int currentElement = integerArray.getElement(i);
+
+            if (currentElement == startElement) {
+                countOfFindNumbers += 1;
+            } else {
+                if (maxValueNumbers < countOfFindNumbers) {
+                    maxValueNumbers = countOfFindNumbers;
+                } else {
+                    countOfFindNumbers = 1;
+                    startElement = currentElement;
                 }
             }
         }
-
-        for (int i = 0; i < outArray.length - 1; i++) {
-            if (outArray[i] > maximum) {
-                maximum = outArray[i];
-            }
+        if (maxValueNumbers < countOfFindNumbers) {
+            maxValueNumbers = countOfFindNumbers;
         }
-        return maximum;
+        return maxValueNumbers;
     }
 }
