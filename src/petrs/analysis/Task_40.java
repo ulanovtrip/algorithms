@@ -14,6 +14,12 @@ public class Task_40 {
         inputArray.printIntArray();
         int countOfNumbers = 0;
 
+        countOfNumbers = findCountNumbersNeighboursMoreThanTwice(inputArray, countOfNumbers);
+        Utils.newLine();
+        Utils.print("countOfNumbers = " + countOfNumbers);
+    }
+
+    private static int findCountNumbersNeighboursMoreThanTwice(RandomArray inputArray, int countOfNumbers) {
         for (int i = 1; i < inputArray.getSize() - 1; i++) {
             int leftNeighbour = Math.abs(inputArray.getElement(i - 1));
             int rightNeighbour = Math.abs(inputArray.getElement(i + 1));
@@ -22,7 +28,6 @@ public class Task_40 {
                 countOfNumbers++;
             }
         }
-        Utils.newLine();
-        Utils.print("countOfNumbers = " + countOfNumbers);
+        return countOfNumbers;
     }
 }

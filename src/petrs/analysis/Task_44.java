@@ -1,8 +1,48 @@
 package petrs.analysis;
 
+import petrs.IntegerArray;
+import petrs.Utils;
+
 /**
- *Проверьте, является ли данный массив возрастающим или убывающим.
+ * Проверьте, является ли данный массив возрастающим или убывающим.
  */
 
 public class Task_44 {
+    public static void main(String[] args) {
+        IntegerArray inputArray = new IntegerArray(5, 10);
+        inputArray.generateDecreasingArray(1);
+        inputArray.print();
+        Utils.newLine();
+        System.out.println(checkDecreasing(inputArray));
+        inputArray.generateArithmeticProgression(1);
+        inputArray.print();
+        Utils.newLine();
+        System.out.println(checkIncreasing(inputArray));
+    }
+
+    private static boolean checkDecreasing(IntegerArray integerArray) {
+        int countStep = 0;
+        for (int i = 0; i < integerArray.getSize(); i++) {
+            if (integerArray.getElement(i + 1) < integerArray.getElement(i)) {
+                countStep++;
+            }
+            if (countStep == integerArray.getSize() - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkIncreasing(IntegerArray integerArray) {
+        int countStep = 0;
+        for (int i = 0; i < integerArray.getSize(); i++) {
+            if (integerArray.getElement(i + 1) > integerArray.getElement(i)) {
+                countStep++;
+            }
+            if (countStep == integerArray.getSize() - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

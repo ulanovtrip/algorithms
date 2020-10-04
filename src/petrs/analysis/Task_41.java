@@ -14,14 +14,23 @@ public class Task_41 {
         inputArray.generate(1);
         inputArray.printIntArray();
         int countOfNumbers = 0;
-        int maximum = -1;
 
+        countOfNumbers = findNumbersEqualsSumOfSquareNeighboursNotMax(inputArray, countOfNumbers);
+        Utils.newLine();
+        Utils.print("countOfNumbers = " + countOfNumbers);
+    }
+
+    private static int findNumbersEqualsSumOfSquareNeighboursNotMax(RandomArray inputArray, int countOfNumbers) {
+        int maximum = -1;
         for (int i = 0; i < inputArray.getSize(); i++) {
+            if(inputArray.getSize() == 0) {
+                System.out.println("inputArray id empty!");
+                break;
+            }
             if (inputArray.getElement(i) > maximum) {
                 maximum = inputArray.getElement(i);
             }
         }
-
         for (int i = 1; i < inputArray.getSize() - 1; i++) {
             int squareLeftNeighbour = (int) Math.pow(inputArray.getElement(i - 1), 2);
             int squareRightNeighbour = (int) Math.pow(inputArray.getElement(i + 1), 2);
@@ -30,8 +39,6 @@ public class Task_41 {
                 countOfNumbers++;
             }
         }
-
-        Utils.newLine();
-        Utils.print("countOfNumbers = " + countOfNumbers);
+        return countOfNumbers;
     }
 }

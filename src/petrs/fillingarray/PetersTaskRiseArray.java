@@ -18,7 +18,7 @@ public class PetersTaskRiseArray {
         if (checkLengthArray < 1) {
             System.out.println("Array is empty!");
         } else {
-            //array.length - 2 здесь вычитается два, т.к. иначе array[i + 1] из if будет выйдет за пределы массива
+            //array.length - 2 здесь вычитается два, т.к. иначе array[i + 1] из if выйдет за пределы массива
             for (int i = 0; i <= array.length - 2; i++) {
                 //сравнимаем i-й элемент и след. за ним
                 if (array[i] <= array[i + 1]) {
