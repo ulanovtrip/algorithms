@@ -3,8 +3,6 @@ package petrs.converting_an_array;
 import petrs.IntegerArray;
 import petrs.Utils;
 
-import java.util.Arrays;
-
 /**
  * Поменять местами наибольший и наименьший элементы массива.
  */
@@ -15,43 +13,31 @@ public class Task_58 {
         integerArray.generateRandom(0);
         integerArray.print();
         Utils.newLine();
-        int min = findMin(integerArray);
-        int max = findMax(integerArray);
-        changeLastAndFirst(integerArray, min, max);
+        swapMaxAndMin(integerArray);
     }
 
-    private static void changeLastAndFirst(IntegerArray integerArray, int min, int max) {
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            if (integerArray.getElement(i) == min) {
-                integerArray.setValue(i, max);
-                break;
+    private static void swapMaxAndMin(IntegerArray integerArray) {
+        int min = integerArray.getElement(0);
+        int indexOfMin = 0;
+        int max = integerArray.getElement(0);
+        int indexOfMax = 0;
+        for (int i = 1; i < integerArray.getSize(); i++) {
+            if (integerArray.getElement(i) < min) {
+                min = integerArray.getElement(i);
+                indexOfMin = i;
+            }
+
+            if (integerArray.getElement(i) > max) {
+                max = integerArray.getElement(i);
+                indexOfMax = i;
             }
         }
 
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            if (integerArray.getElement(i) == max) {
-                integerArray.setValue(i, min);
-                break;
-            }
-        }
+        System.out.println("min = " + min + "; max = " + max);
+
+        int temp = integerArray.getElement(indexOfMin);
+        integerArray.setValue(indexOfMin, max);
+        integerArray.setValue(indexOfMax, temp);
         integerArray.print();
-    }
-
-    private static int findMin(IntegerArray integerArray) {
-        Integer[] tempArray = new Integer[integerArray.getSize()];
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            tempArray[i] = integerArray.getElement(i);
-        }
-        Arrays.sort(tempArray);
-        return tempArray[0];
-    }
-
-    private static int findMax(IntegerArray integerArray) {
-        Integer[] tempArray = new Integer[integerArray.getSize()];
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            tempArray[i] = integerArray.getElement(i);
-        }
-        Arrays.sort(tempArray);
-        return tempArray[tempArray.length - 1];
     }
 }

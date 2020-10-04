@@ -9,38 +9,43 @@ import petrs.Utils;
 
 public class Task_48 {
     public static void main(String[] args) {
-        IntegerArray integerArray = new IntegerArray(8, 9);
+        IntegerArray integerArray = new IntegerArray(10, 9);
         integerArray.generateRandom(1);
-        integerArray.print();
-        Utils.newLine();
+        //integerArray.arrayForTask48();
         findMostCommonElement(integerArray);
     }
 
     private static void findMostCommonElement(IntegerArray integerArray) {
-        int currentMaximum = 0;
-        int repetitionsCurrentNumber = 0;
-        int numberInMemory = 0;
+        integerArray.sort();
+        integerArray.print();
+        Utils.newLine();
+        //колличество повторений наиболее часто встречающегося эелемента
+        int max_count = 0;
+        //значение наиболее часто встречающегося элемента
+        int max_element = 0;
+        //число найденных повторений
+        int count = 1;
+        //беру первый элемент массива
+        int element = integerArray.getElement(0);
 
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            repetitionsCurrentNumber = 1;
-            for (int j = i + 1; j < integerArray.getSize(); j++) {
-                if (integerArray.getElement(i) == integerArray.getElement(j)) {
-                    repetitionsCurrentNumber++;
-                }
-                if (repetitionsCurrentNumber > currentMaximum) {
-                    currentMaximum = repetitionsCurrentNumber;
-                    numberInMemory = integerArray.getElement(i);
+        for (int i = 1; i < integerArray.getSize(); i++) {
+            int current = integerArray.getElement(i);
+            if (element == current) {
+                count += 1;
+            } else {
+                if (max_count < count) {
+                    max_element = element;
+                    max_count = count;
                 } else {
-                    if (repetitionsCurrentNumber == currentMaximum) {
-                        if (numberInMemory > integerArray.getElement(i)) {
-                            continue;
-                        } else {
-                            numberInMemory = integerArray.getElement(i);
-                        }
-                    }
+                    count = 1;
+                    element = current;
                 }
             }
         }
-        System.out.println(numberInMemory + " // " + currentMaximum);
+        if (max_count < count) {
+            max_element = element;
+            max_count = count;
+        }
+        System.out.println("max_element = " + max_element + " || " + "max_count = " + max_count);
     }
 }
