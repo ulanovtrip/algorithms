@@ -42,10 +42,12 @@ public class Task_48 {
                 }
             }
         }
+
         if (max_count < count) {
             max_element = element;
             max_count = count;
         }
+
         System.out.println("max_element = " + max_element + " || " + "max_count = " + max_count);
     }
 }

@@ -21,6 +21,7 @@ public class Task_58 {
         int indexOfMin = 0;
         int max = integerArray.getElement(0);
         int indexOfMax = 0;
+
         for (int i = 1; i < integerArray.getSize(); i++) {
             if (integerArray.getElement(i) < min) {
                 min = integerArray.getElement(i);
