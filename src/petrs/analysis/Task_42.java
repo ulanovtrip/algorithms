@@ -28,11 +28,12 @@ public class Task_42 {
     }
 
     private static boolean isContainsFromZeroToN(RandomArray inputArray) {
+        if (inputArray.isEmpty()) {
+            System.out.println("input array is empty!");
+            return false;
+        }
         for (int i = 0; i < inputArray.getSize(); i++) {
-            if (inputArray.isEmpty()) {
-                System.out.println("input array is empty!");
-                break;
-            }
+
             if (i == inputArray.getElement(i)) {
                 continue;
             } else {
