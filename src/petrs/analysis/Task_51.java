@@ -1,5 +1,7 @@
 package petrs.analysis;
 
+import petrs.Utils;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -20,8 +22,8 @@ public class Task_51 {
         } catch (Exception e) {
             System.out.println("Input is empty!!!");
         }
-
-        findTwoSmallestElements(numbers);
+        //findTwoSmallestElements(numbers);
+        findTwoSmallestElementVerTwo(numbers);
     }
 
     private static void findTwoSmallestElements(int[] numbers) {
@@ -30,5 +32,26 @@ public class Task_51 {
         int secondMinimum = numbers[1];
         System.out.println("firstMinimum = " + firstMinimum);
         System.out.println("secondMinimum = " + secondMinimum);
+    }
+
+    private static void findTwoSmallestElementVerTwo(int[] numbers)     {
+        int firstMin = numbers[0];
+        int secondMin = numbers[1];
+
+        if (firstMin > secondMin) {
+            firstMin = numbers[1];
+            secondMin = numbers[0];
+        }
+
+        for (int i = 2; i < numbers.length; i++) {
+            if (numbers[i] < firstMin) {
+                secondMin = firstMin;
+                firstMin = numbers[i];
+            } else if (numbers[i] < secondMin) {
+                secondMin = numbers[i];
+            }
+        }
+
+        Utils.print("firstMin = " + firstMin + "; 3secondMin = " + secondMin);
     }
 }

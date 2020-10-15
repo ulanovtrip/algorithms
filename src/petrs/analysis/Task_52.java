@@ -1,5 +1,7 @@
 package petrs.analysis;
 
+import petrs.Utils;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -26,21 +28,14 @@ public class Task_52 {
 
     private static void findRepeatingElements(int[] numbers) {
         Arrays.sort(numbers);
-        int countOfRepeating = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if(countOfRepeating != 0) break;
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[i] == numbers[j]) {
-                    countOfRepeating++;
-                    break;
-                }
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (numbers[i] == numbers[i + 1]) {
+                Utils.print("Not unique.");
+                break;
             }
-        }
-
-        if (countOfRepeating == 0) {
-            System.out.println("All elements is unique!!!");
-        } else {
-            System.out.println("There are the same elements!!!");
+            if (i == numbers.length - 2) {
+                Utils.print("Unique");
+            }
         }
     }
 }

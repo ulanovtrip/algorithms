@@ -12,7 +12,7 @@ import petrs.Utils;
 
 public class Task_66 {
     private static final int band = 10;
-    private static final int size = 10;
+    private static final int size = 11;
 
     public static void main(String[] args) {
         IntegerArray A = new IntegerArray(size, band);
@@ -24,18 +24,16 @@ public class Task_66 {
 
     private static void createArrayB(IntegerArray A) {
         IntegerArray B = new IntegerArray(A.getSize(), band);
+        int Bk = 0;
+
+        if (A.getSize() == 0) {
+            Utils.print("Input is empty!");
+        }
+
         for (int i = 0; i < B.getSize(); i++) {
-            int bk = sumOfFirstNElemArrayA(A, i);
-            B.setValue(i, bk);
+            Bk = Bk + A.getElement(i);
+            B.setValue(i, Bk);
         }
         B.print();
-    }
-
-    private static int sumOfFirstNElemArrayA(IntegerArray A, int steps) {
-        int sumOfElement = 0;
-        for (int i = 0; i <= steps; i++) {
-            sumOfElement = sumOfElement + A.getElement(i);
-        }
-        return sumOfElement;
     }
 }

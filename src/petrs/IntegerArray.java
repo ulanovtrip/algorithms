@@ -93,34 +93,4 @@ public class IntegerArray implements Array {
     public void setValue(int index, int value) {
         arrayInt[index] = value;
     }
-
-    public void arrayForTask48() {
-        arrayInt[0] = 1;
-        arrayInt[1] = 3;
-        arrayInt[2] = 8;
-        arrayInt[3] = 8;
-        arrayInt[4] = 8;
-    }
-
-    public void arrayForTask59() {
-        arrayInt[0] = 2;
-        arrayInt[1] = 3;
-        arrayInt[2] = 2;
-        arrayInt[3] = 5;
-        arrayInt[4] = 2;
-    }
-
-    public void arrayForTask_67() {
-        //1; 0; 3; 0; 4; 1; 1; 2; 0; 0;
-        arrayInt[0] = 1;
-        arrayInt[1] = 0;
-        arrayInt[2] = 3;
-        arrayInt[3] = 0;
-        arrayInt[4] = 4;
-        arrayInt[5] = 1;
-        arrayInt[6] = 1;
-        arrayInt[7] = 2;
-        arrayInt[8] = 0;
-        arrayInt[9] = 0;
-    }
 }
