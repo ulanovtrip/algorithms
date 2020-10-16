@@ -6,8 +6,12 @@ public class Utils {
         System.out.println();
     }
 
-    public static void print(String text) {
+    public static void println(String text) {
         System.out.println(text);
+    }
+
+    public static void print(String text) {
+        System.out.print(text);
     }
 
     public static void printArray(String text, int[] array) {

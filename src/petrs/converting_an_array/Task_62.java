@@ -4,7 +4,9 @@ import petrs.IntegerArray;
 import petrs.Utils;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Удалить в массиве все числа, которые повторяются более двух раз.
@@ -20,29 +22,33 @@ public class Task_62 {
     }
 
     private static void deleteRepeatingMoreThanTwice(IntegerArray inputArray) {
-        List<Integer> output = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
+        IntegerArray copyOfInput = new IntegerArray(inputArray.getSize(), 10);
+
+        for (int i = 0; i < inputArray.getSize(); i++) {
+            copyOfInput.setValue(i, inputArray.getElement(i));
+        }
+
         Utils.print("Sort array: ");
         inputArray.sort();
         inputArray.print();
-        int count = 1;
 
         for (int i = 0; i < inputArray.getSize(); i++) {
-            if (i + count >= inputArray.getSize()) break;
+            if (i == inputArray.getSize() - 1) break;
             int currentNumber = inputArray.getElement(i);
             if (currentNumber == inputArray.getElement(i + 1)) {
-                count += 1;
-            } else {
-                if (count == 1) {
-                    output.add(currentNumber);
-                }
-                count = 1;
+                set.add(inputArray.getElement(i));
             }
         }
 
         Utils.newLine();
         Utils.print("New Array: ");
-        for (int num : output) {
-            System.out.print(" - " + num);
+        for (int i = 0; i < copyOfInput.getSize(); i++) {
+            if (set.contains(copyOfInput.getElement(i))) {
+                continue;
+            } else {
+                System.out.print(copyOfInput.getElement(i) + "; ");
+            }
         }
     }
 }
