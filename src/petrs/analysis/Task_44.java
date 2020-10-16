@@ -21,12 +21,11 @@ public class Task_44 {
     }
 
     private static boolean checkDecreasing(IntegerArray integerArray) {
-        int countStep = 0;
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            if (integerArray.getElement(i + 1) < integerArray.getElement(i)) {
-                countStep++;
+        for (int i = 0; i < integerArray.getSize() - 1; i++) {
+            if (integerArray.getElement(i) < integerArray.getElement(i + 1)) {
+                continue;
             }
-            if (countStep == integerArray.getSize() - 1) {
+            if (i == integerArray.getSize() - 2) {
                 return true;
             }
         }
@@ -34,12 +33,11 @@ public class Task_44 {
     }
 
     private static boolean checkIncreasing(IntegerArray integerArray) {
-        int countStep = 0;
-        for (int i = 0; i < integerArray.getSize(); i++) {
-            if (integerArray.getElement(i + 1) > integerArray.getElement(i)) {
-                countStep++;
+        for (int i = 0; i < integerArray.getSize() - 1; i++) {
+            if (integerArray.getElement(i) > integerArray.getElement(i + 1)) {
+                continue;
             }
-            if (countStep == integerArray.getSize() - 1) {
+            if (i == integerArray.getSize() - 2) {
                 return true;
             }
         }
