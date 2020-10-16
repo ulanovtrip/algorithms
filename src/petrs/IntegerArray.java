@@ -89,4 +89,8 @@ public class IntegerArray implements Array {
             arrayInt[i] = start;
         }
     }
+
+    public void setValue(int index, int value) {
+        arrayInt[index] = value;
+    }
 }

@@ -43,7 +43,7 @@ public class PercolationStats {
         int n = 0;
         int T = 0;
 
-        Percolation percolation = new Percolation(3);
+        sedgewick.date.week1.example92.Percolation percolation = new sedgewick.date.week1.example92.Percolation(3);
 
     }
 }
