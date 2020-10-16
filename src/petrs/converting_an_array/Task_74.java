@@ -1,4 +1,7 @@
-package petrs;
+package petrs.converting_an_array;
+
+import petrs.IntegerArray;
+import petrs.Utils;
 
 import java.util.HashSet;
 import java.util.Set;
