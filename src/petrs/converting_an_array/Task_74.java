@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class Task_74 {
     public static void main(String[] args) {
-        IntegerArray inputArray = new IntegerArray(10, 30);
+        IntegerArray inputArray = new IntegerArray(10, 300);
         inputArray.generateRandom(10);
         inputArray.print();
         Utils.newLine();
@@ -24,6 +24,7 @@ public class Task_74 {
         Set<Integer> palindromes = new HashSet<>();
         int flag = 0;
 
+        Utils.print("Palindromes: ");
         for (int i = 0; i < inputArray.getSize(); i++) {
             int palindrome = inputArray.getElement(i); // считаю первое чсло палиндромом
             int reverse = 0; // хранит реверсивное значение числа
@@ -38,7 +39,7 @@ public class Task_74 {
             // if original and reverse of number is equal means number is palindrome
             if (reverse == inputArray.getElement(i)) {
                 flag = 1;
-                Utils.print("Palindrome: " + inputArray.getElement(i));
+                Utils.print(inputArray.getElement(i) + "; ");
                 palindromes.add(inputArray.getElement(i));
             }
         }
@@ -46,6 +47,9 @@ public class Task_74 {
         if (flag == 0) {
             Utils.print("Palindrome not found!");
         }
+
+        Utils.newLine();
+        Utils.print("Array without palindromes: ");
 
         for (int i = 0; i < inputArray.getSize(); i++) {
             if (!palindromes.contains(inputArray.getElement(i))) {
