@@ -31,9 +31,9 @@ public class Task_74 {
 
             //в цикле while разворачиваем взятое число
             while (palindrome > 0) {
-                int remainder = palindrome % 10; //вытащили последнее число из многозначного
-                reverse = reverse * 10 + remainder;
-                palindrome = palindrome / 10; // остаток отбросится и так сохраним первое число
+                int remainder = palindrome % 10; //вытащили последнее число из многозначного и сохранили
+                reverse = reverse * 10 + remainder; //доводим до нужной разрядности и прибавим к концу последнее число
+                palindrome = palindrome / 10; //уменьшим разрядность, без последнего числа
             }
 
             // if original and reverse of number is equal means number is palindrome
