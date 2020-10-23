@@ -3,7 +3,6 @@ package petrs.converting_an_array;
 import petrs.IntegerArray;
 import petrs.Utils;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
