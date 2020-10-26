@@ -9,6 +9,8 @@ public interface Array {
 
     int getSize();
 
+    int getIndex(int value);
+
     int getElement(int element);
 
     void sort();

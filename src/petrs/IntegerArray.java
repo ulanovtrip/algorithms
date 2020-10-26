@@ -36,18 +36,6 @@ public class IntegerArray implements Array {
         }
     }
 
-    public void generateTask47() {
-        arrayInt[0] = 2;
-        arrayInt[1] = 3;
-        arrayInt[2] = 5;
-        arrayInt[3] = 5;
-        arrayInt[4] = 5;
-        arrayInt[5] = 6;
-        arrayInt[6] = 7;
-        arrayInt[7] = 8;
-        arrayInt[8] = 9;
-    }
-
     @Override
     public int getSize() {
         return size;
@@ -92,5 +80,16 @@ public class IntegerArray implements Array {
 
     public void setValue(int index, int value) {
         arrayInt[index] = value;
+    }
+
+    @Override
+    public int getIndex(int value) {
+        int index = 0;
+        for (int i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] == value) {
+                index = i;
+            }
+        }
+        return index;
     }
 }
