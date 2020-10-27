@@ -45,7 +45,6 @@ public class Task_82 {
                     if (isPalindrome(currentNumber)) {
                         set.add(currentNumber);
                     }
-
                 } else {
                     continue;
                 }
