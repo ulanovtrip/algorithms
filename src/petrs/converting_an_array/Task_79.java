@@ -8,27 +8,37 @@ package petrs.converting_an_array;
 
 public class Task_79 {
     public static void main(String[] args) {
-        int[] first = {1, 6, 8, 12};
-        int[] second = {3, 7, 9, 10};
+        int[] first = {1, 12, 23, 21};
+        int[] second = {3, 10, 13, 14};
         crateCommonArray(first, second);
     }
 
     private static void crateCommonArray(int[] first, int[] second) {
         if (first.length == 0 || second.length == 0) return;
         int[] output = new int[first.length + second.length];
+        int lengthArray;
+        if(first.length > second.length) {
+            lengthArray = first.length;
+        } else if(second.length > first.length) {
+            lengthArray = second.length;
+        } else {
+            lengthArray = first.length;
+        }
 
         int outputIndex = 0;
-        for (int i = 0; i < output.length - 4; i++, outputIndex++) {
-
-            if (first[i] < second[i]) {
+        for (int i = 0; i < lengthArray - 1; i++, outputIndex++) {
+            if (first[i] < second[i] && first[i] < second[i + 1]) {
                 output[outputIndex] = first[i];
                 output[outputIndex + 1] = second[i];
-                outputIndex++;
-            } else {
+            } else if(first[i] > second[i] && first[i] > second[i + 1]) {
+                output[outputIndex] = second[i];
+                output[outputIndex + 1] = second[i + 1];
+                output[outputIndex + 2] = first[i];
+            } else  {
                 output[outputIndex] = second[i];
                 output[outputIndex + 1] = first[i];
-                outputIndex++;
             }
+            outputIndex++;
         }
 
         for (int i = 0; i < output.length; i++) {

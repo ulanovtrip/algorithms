@@ -2,6 +2,7 @@ package petrs;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class IntegerArray implements Array {
     Random random = new Random();
@@ -84,12 +85,9 @@ public class IntegerArray implements Array {
 
     @Override
     public int getIndex(int value) {
-        int index = 0;
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (arrayInt[i] == value) {
-                index = i;
-            }
-        }
-        return index;
+        return IntStream.range(0, arrayInt.length)
+                .filter(i -> value == arrayInt[i])
+                .findFirst()
+                .orElse(-1);
     }
 }
