@@ -30,14 +30,15 @@ public class Task_84 {
         }
     }
 
-    private static int multiplyDigits(int number) {
-        int multiply = 1;
-        int n = number;
+    private static int multiplyDigits(int input) {
+        int number = input;
+        int resultOfMultiply = 1;
 
-        while (n > 0) {
-            multiply *= n % 10;
-            n /= 10;
+        while (number > 0) {
+            int lastDigit = number % 10;
+            resultOfMultiply = resultOfMultiply * lastDigit;
+            number = number / 10;
         }
-        return multiply;
+        return resultOfMultiply;
     }
 }
