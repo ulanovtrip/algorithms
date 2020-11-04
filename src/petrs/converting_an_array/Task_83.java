@@ -1,6 +1,5 @@
 package petrs.converting_an_array;
 
-import edu.princeton.cs.algs4.In;
 import petrs.IntegerArray;
 import petrs.Utils;
 
