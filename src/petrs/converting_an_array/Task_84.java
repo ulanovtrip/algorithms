@@ -1,6 +1,8 @@
 package petrs.converting_an_array;
 
 
+import petrs.Utils;
+
 import java.util.stream.IntStream;
 
 /**
@@ -13,8 +15,29 @@ public class Task_84 {
     public static void main(String[] args) {
         int end = (int) Math.pow(10, 7);
         int start = 9;
-        int[] input = IntStream.range(start,end).toArray();
+        int[] input = IntStream.range(start, end).toArray();
+        int k = 30;
+        findMinimumNumber(k, input);
+    }
 
+    private static void findMinimumNumber(int k, int[] input) {
+        for (int j : input) {
+            if (j < 10) continue;
+            if (k == multiplyDigits(j)) {
+                Utils.print("Find: " + j);
+                break;
+            }
+        }
+    }
 
+    private static int multiplyDigits(int number) {
+        int multiply = 1;
+        int n = number;
+
+        while (n > 0) {
+            multiply *= n % 10;
+            n /= 10;
+        }
+        return multiply;
     }
 }
