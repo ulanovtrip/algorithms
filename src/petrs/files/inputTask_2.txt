@@ -1,0 +1,2 @@
+In android,
+Text2View is a user inter3face cont45rol that is used to set and disp4lay the text to the user based on our requirements.
