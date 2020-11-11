@@ -21,7 +21,6 @@ public class Task_14 {
         }
 
         while (!set.isEmpty()) {
-
             Integer[] setOfFreeIndexes = set.toArray(new Integer[]{set.size()});
 
             int randomOneOreZero = (int) (0 + Math.random() * 2);

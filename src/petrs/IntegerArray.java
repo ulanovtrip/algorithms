@@ -2,6 +2,7 @@ package petrs;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class IntegerArray implements Array {
     Random random = new Random();
@@ -34,18 +35,6 @@ public class IntegerArray implements Array {
         for (int i = 0; i < size; i++) {
             arrayInt[i] = random.nextInt(max - min) + min;
         }
-    }
-
-    public void generateTask47() {
-        arrayInt[0] = 2;
-        arrayInt[1] = 3;
-        arrayInt[2] = 5;
-        arrayInt[3] = 5;
-        arrayInt[4] = 5;
-        arrayInt[5] = 6;
-        arrayInt[6] = 7;
-        arrayInt[7] = 8;
-        arrayInt[8] = 9;
     }
 
     @Override
@@ -92,5 +81,13 @@ public class IntegerArray implements Array {
 
     public void setValue(int index, int value) {
         arrayInt[index] = value;
+    }
+
+    @Override
+    public int getIndex(int value) {
+        return IntStream.range(0, arrayInt.length)
+                .filter(i -> value == arrayInt[i])
+                .findFirst()
+                .orElse(-1);
     }
 }
