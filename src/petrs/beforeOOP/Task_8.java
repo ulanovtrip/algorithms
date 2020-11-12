@@ -25,7 +25,6 @@ public class Task_8 {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
         int currentMonth = calendar.get(Calendar.MONTH);
         String currentDate = dateFormat.format(date);
         schedule.add(currentDate);
