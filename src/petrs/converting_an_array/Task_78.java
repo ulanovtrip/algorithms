@@ -21,13 +21,13 @@ public class Task_78 {
     private static void swap(IntegerArray inputArray) {
         if(inputArray.getSize() == 0) return;
         int zeros = 0, ones = 0, twos = 0;
-        for (int i = 0; i < inputArray.getSize(); i++) {
-            switch (inputArray.getElement(i)) {
-                case 0 -> zeros++;
-                case 1 -> ones++;
-                case 2 -> twos++;
-            }
-        }
+//        for (int i = 0; i < inputArray.getSize(); i++) {
+//            switch (inputArray.getElement(i)) {
+//                case 0 -> zeros++;
+//                case 1 -> ones++;
+//                case 2 -> twos++;
+//            }
+//        }
         Utils.newLine();
         System.out.println("zeros: " + zeros + "; " + "ones: " + ones + "; " + "twos: " + twos);
 
