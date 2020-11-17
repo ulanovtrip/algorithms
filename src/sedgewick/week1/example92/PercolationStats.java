@@ -1,4 +1,4 @@
-package sedgewick.date.week1.example92;
+package sedgewick.week1.example92;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
@@ -24,7 +24,7 @@ public class PercolationStats {
 
         //цикл для проведения колличества испытаний
         for (int trial = 0; trial < trialCount; trial++) {
-            Percolation percolation = new Percolation(gridSize);
+            sedgewick.date.week1.example92.Percolation percolation = new sedgewick.date.week1.example92.Percolation(gridSize);
             while (!percolation.percolates()) {
                 //выбирается произвольный ряд из диапазона от 1 до размера сетки + 1
                 int row = StdRandom.uniform(1, gridSize + 1);
