@@ -1,4 +1,4 @@
-package tij4.chapter_11.exercise_16;
+package tij4.chapter_11;
 
 // Static functions for reading and writing text files as
 // a single string, and treating a file as an ArrayList.
