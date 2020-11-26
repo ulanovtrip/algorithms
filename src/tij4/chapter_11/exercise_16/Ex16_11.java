@@ -1,6 +1,6 @@
 package tij4.chapter_11.exercise_16;
 
-import tij4.chapter_11.TextFile;
+import tij4.examples.TextFile;
 
 import java.util.Collections;
 import java.util.Set;
