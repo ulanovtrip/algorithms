@@ -1,4 +1,4 @@
-package tij4.examples.typeinfo;//: typeinfo/Shapes.java
+package tij4.examples.typeinfo;//: typeinfo/ShapesEx5_14.java
 import java.util.*;
 
 abstract class Shape {
