@@ -22,6 +22,7 @@ public class TextFile extends ArrayList<String> {
                     sb.append("\n");
                 }
             } finally {
+                //гарантирует корректное закрытие
                 in.close();
             }
         } catch (IOException e) {
