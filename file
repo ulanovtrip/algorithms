@@ -1,0 +1,26 @@
+1: package tij4.chapter_18.exercise_13;//: io/BasicFileOutput.java
+2: 
+3: import tij4.chapter_18.BufferedInputFile;
+4: 
+5: import java.io.*;
+6: 
+7: public class BasicFileOutput {
+8:     static String file = "src/tij4/chapter_18/exercise_13/output.txt";
+9: 
+10:     public static void main(String[] args)
+11:             throws IOException {
+12: 
+13:         LineNumberReader in = new LineNumberReader(
+14:                 new FileReader("src/tij4/chapter_18/exercise_13/BasicFileOutput.java")
+15:         );
+16: 
+17:         PrintWriter writer = new PrintWriter("file");
+18: 
+19:         String s;
+20:         while ((s = in.readLine()) != null)
+21:           writer.println(in.getLineNumber() + ": " + s);
+22:       writer.close();
+23:         // Show the stored file:
+24:         System.out.println(BufferedInputFile.read(file));
+25:     }
+26: }
