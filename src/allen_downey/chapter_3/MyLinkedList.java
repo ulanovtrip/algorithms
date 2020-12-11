@@ -3,20 +3,10 @@
  */
 package allen_downey.chapter_3;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class MyLinkedList<E> implements List<E> {
 
-    /**
-     * Node is identical to ListNode from the example, but parameterized with T
-     *
-     * @author downey
-     *
-     */
     private class Node {
         public E data;
         public Node next;
@@ -38,16 +28,13 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     private int size;            // keeps track of the number of elements
-    private Node head;           // reference to the first node or null, if list is empty
+    private Node head;           // reference to the first node
 
     public MyLinkedList() {
         head = null;
         size = 0;
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         // run a few simple tests
         List<Integer> mll = new MyLinkedList<Integer>();
@@ -65,11 +52,9 @@ public class MyLinkedList<E> implements List<E> {
         if (head == null) {
             head = new Node(element);
         } else {
-            // нужно объявить node до цикла, чтобы получить к нему доступ после его завершения.
             Node node = head;
             // loop until the last node
             for (; node.next != null; node = node.next) {
-                //empty body
             }
             node.next = new Node(element);
         }
@@ -80,12 +65,22 @@ public class MyLinkedList<E> implements List<E> {
     @Override
     public void add(int index, E element) {
         if (index == 0) {
+            // тогда просто создаётся узел, с новым значением и он будет ссылаться на головной.
             head = new Node(element, head);
         } else {
-            Node node = getNode(index - 1);
-            node.next = new Node(element, node.next);
+            // если уже есть узлы, то находим узел в предыдущей позиции до index,
+            Node tempNode = getNode(index - 1);
+
+            //изначально tempNode.next ссылается на узел в позиции "index".
+            // нужно чтобы поле next эл-та "index-1" ссылалось на новый элемент "index"
+            // создаётся новый узел, его поле "next" ссылается на узел с номером "index".
+            Node newNode = new Node(element, tempNode.next);
+
+            // теперь ссылаем "index-1" узел на новый узел newNode
+            tempNode.next = newNode;
         }
-        size++;
+        // т.к. добавлен элемент, то нужно увеличить размер size
+        size += 1;
     }
 
     @Override
@@ -129,16 +124,16 @@ public class MyLinkedList<E> implements List<E> {
         return node.data;
     }
 
-    /** Returns the node at the given index.
-     * @param index
-     * @return
-     */
+
     private Node getNode(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
+        // начинаем цикл с головного узла
         Node node = head;
+        // идём по узлам и находим в позиции равной index
         for (int i = 0; i < index; i++) {
+            //каждый проход выбирается следующий узел.
             node = node.next;
         }
         return node;
@@ -146,26 +141,19 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public int indexOf(Object target) {
-        //Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+        // Returns the index of the first occurrence of the specified element in this list
 
-        Node node = head;
+        // определяем головной узел
+        Node tempNode = head;
         for (int i = 0; i < size; i++) {
-            if (getNode(i) == null) throw new NullPointerException();
-            if (equals(target, node.data)) {
+            if (equals(target, tempNode.data)) {
                 return i;
             }
-            node = node.next;
+            tempNode = tempNode.next;
         }
         return -1;
     }
 
-    /** Checks whether an element of the array is the target.
-     *
-     * Handles the special case that the target is null.
-     *
-     * @param target
-     * //@param object
-     */
     private boolean equals(Object target, Object element) {
         if (target == null) {
             return element == null;
@@ -220,22 +208,20 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        // Removes the element at the specified position in this list (optional operation).
-        // Shifts any subsequent elements to the left (subtracts one from their indices).
-        // Returns the element that was removed from the list.
+        // сохраним узел под index
+        E savedElem = get(index);
 
-        E element = get(index);
         if (index == 0) {
             head = head.next;
         } else {
-            //запомнил предыдущий узел, перед удаляемым
-            Node node = getNode(index - 1);
-            //поле next нового узла хранит значение следующего за ним
-            node.next = node.next.next;
+            // сохраняем во временную ссылку предыдущий узел перед удаляемым
+            Node beforeDelete = getNode(index - 1);
+            //затем ссылаем предстоящий на следующий после удаляемого, так мы удалим узел из списка
+            beforeDelete.next = beforeDelete.next.next;
         }
-        size--;
-        //the element previously at the specified position
-        return element;
+        // после удаления нужно декрементировать size
+        size -= 1;
+        return savedElem;
     }
 
     @Override
