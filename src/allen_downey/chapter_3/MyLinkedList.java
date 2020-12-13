@@ -149,6 +149,7 @@ public class MyLinkedList<E> implements List<E> {
             if (equals(target, tempNode.data)) {
                 return i;
             }
+            // двигаемся каждую итерацию к следующему узлу, если target != tempNode.data
             tempNode = tempNode.next;
         }
         return -1;
