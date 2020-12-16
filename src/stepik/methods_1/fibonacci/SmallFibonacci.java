@@ -1,4 +1,4 @@
-package stepik.methods_1;
+package stepik.methods_1.fibonacci;
 
 import java.util.Scanner;
 
