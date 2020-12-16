@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="jcommon-1.0.23">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/ThinkDast/jar_files/jcommon-1.0.23.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ThinkDast/jfree/jar_files/jcommon-1.0.23.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/jcommon-1.0.23-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

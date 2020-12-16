@@ -1,6 +1,4 @@
-package stepik.basicstuct;
-
-import java.util.Scanner;
+package stepik.basicstuct_2;
 
 public class Brackets {
 

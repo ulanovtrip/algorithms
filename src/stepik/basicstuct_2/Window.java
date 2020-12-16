@@ -1,4 +1,4 @@
-package stepik.basicstuct;
+package stepik.basicstuct_2;
 
 /**
  * вход: последовательность чисесл a1, a2 ... an.
