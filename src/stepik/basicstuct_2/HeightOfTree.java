@@ -1,4 +1,4 @@
-package stepik.basicstuct;
+package stepik.basicstuct_2;
 
 /**
  Формат входа.
