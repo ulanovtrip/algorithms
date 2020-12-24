@@ -34,7 +34,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#MyArrayList()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#MyArrayList()}.
      */
     @Test
     public void testMyList() {
@@ -42,7 +42,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#add(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#add(Object)}.
      */
     @Test
     public void testAddT() {
@@ -54,7 +54,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#add(int, Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#add(int, Object)}.
      */
     @Test
     public void testAddIntT() {
@@ -85,7 +85,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#addAll(java.util.Collection)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#addAll(java.util.Collection)}.
      */
     @Test
     public void testAddAllCollectionOfQextendsT() {
@@ -97,7 +97,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#clear()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#clear()}.
      */
     @Test
     public void testClear() {
@@ -106,7 +106,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#contains(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#contains(Object)}.
      */
     @Test
     public void testContains() {
@@ -118,7 +118,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#containsAll(java.util.Collection)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#containsAll(java.util.Collection)}.
      */
     @Test
     public void testContainsAll() {
@@ -126,7 +126,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#get(int)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#get(int)}.
      */
     @Test
     public void testGet() {
@@ -134,7 +134,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#indexOf(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#indexOf(Object)}.
      */
     @Test
     public void testIndexOf() {
@@ -145,7 +145,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#indexOf(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#indexOf(Object)}.
      */
     @Test
     public void testIndexOfNull() {
@@ -155,7 +155,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#isEmpty()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#isEmpty()}.
      */
     @Test
     public void testIsEmpty() {
@@ -165,7 +165,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#iterator()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#iterator()}.
      */
     @Test
     public void testIterator() {
@@ -177,7 +177,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#lastIndexOf(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#lastIndexOf(Object)}.
      */
     @Test
     public void testLastIndexOf() {
@@ -186,7 +186,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#remove(Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#remove(Object)}.
      */
     @Test
     public void testRemoveObject() {
@@ -215,7 +215,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#remove(int)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#remove(int)}.
      */
     @Test
     public void testRemoveInt() {
@@ -226,7 +226,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#removeAll(java.util.Collection)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#removeAll(java.util.Collection)}.
      */
     @Test
     public void testRemoveAll() {
@@ -235,7 +235,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#set(int, Object)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#set(int, Object)}.
      */
     @Test
     public void testSet() {
@@ -269,7 +269,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#size()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#size()}.
      */
     @Test
     public void testSize() {
@@ -277,7 +277,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#subList(int, int)}.
+     * jetbrains_academy.Test method for {@link MyArrayList#subList(int, int)}.
      */
     @Test
     public void testSubList() {
@@ -287,7 +287,7 @@ public class MyArrayListTest {
     }
 
     /**
-     * Test method for {@link MyArrayList#toArray()}.
+     * jetbrains_academy.Test method for {@link MyArrayList#toArray()}.
      */
     @Test
     public void testToArray() {
