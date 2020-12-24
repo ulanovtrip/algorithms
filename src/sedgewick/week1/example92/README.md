@@ -76,7 +76,7 @@ and the return value of isFull(i, j) for every (i, j), in that order.
 
 Except as noted, a site is opened at most once.
 
-Test 1: Open predetermined list of sites using file inputs
+jetbrains_academy.ChessQueen 1: Open predetermined list of sites using file inputs
   *  filename = input6.txt
   *  filename = input8.txt
   *  filename = input8-no.txt
@@ -85,7 +85,7 @@ Test 1: Open predetermined list of sites using file inputs
   *  filename = heart25.txt
 ==> passed
 
-Test 2: Open random sites until just before system percolates
+jetbrains_academy.ChessQueen 2: Open random sites until just before system percolates
   *  n = 3
   *  n = 5
   *  n = 10
@@ -96,37 +96,37 @@ Test 2: Open random sites until just before system percolates
   *  n = 50
 ==> passed
 
-Test 3: Opens predetermined sites for n = 1 and n = 2 (corner case test)
+jetbrains_academy.ChessQueen 3: Opens predetermined sites for n = 1 and n = 2 (corner case test)
   *  filename = input1.txt
   *  filename = input1-no.txt
   *  filename = input2.txt
   *  filename = input2-no.txt
 ==> passed
 
-Test 4: Check for backwash with predetermined sites
+jetbrains_academy.ChessQueen 4: Check for backwash with predetermined sites
   *  filename = input20.txt
   *  filename = input10.txt
   *  filename = input50.txt
   *  filename = jerry47.txt
 ==> passed
 
-Test 5: Check for backwash with predetermined sites that have
+jetbrains_academy.ChessQueen 5: Check for backwash with predetermined sites that have
         multiple percolating paths
   *  filename = input3.txt
   *  filename = input4.txt
   *  filename = input7.txt
 ==> passed
 
-Test 6: Predetermined sites with long percolating path
+jetbrains_academy.ChessQueen 6: Predetermined sites with long percolating path
   *  filename = snake13.txt
   *  filename = snake101.txt
 ==> passed
 
-Test 7: Opens every site
+jetbrains_academy.ChessQueen 7: Opens every site
   *  filename = input5.txt
 ==> passed
 
-Test 8: Open random sites until just before system percolates,
+jetbrains_academy.ChessQueen 8: Open random sites until just before system percolates,
         allowing open() to be called on a site more than once
   *  n = 3
   *  n = 5
@@ -138,7 +138,7 @@ Test 8: Open random sites until just before system percolates,
   *  n = 50
 ==> passed
 
-Test 9: Check that IndexOutOfBoundsException is thrown if (i, j) is out of bounds
+jetbrains_academy.ChessQueen 9: Check that IndexOutOfBoundsException is thrown if (i, j) is out of bounds
   *  n = 10, (i, j) = (0, 6)
   *  n = 10, (i, j) = (12, 6)
   *  n = 10, (i, j) = (11, 6)
@@ -147,17 +147,17 @@ Test 9: Check that IndexOutOfBoundsException is thrown if (i, j) is out of bound
   *  n = 10, (i, j) = (6, 11)
 ==> passed
 
-Test 10: Check that IllegalArgumentException is thrown if N <= 0 in constructor
+jetbrains_academy.ChessQueen 10: Check that IllegalArgumentException is thrown if N <= 0 in constructor
   *  n = -10
   *  n = -1
   *  n = 0
 ==> passed
 
-Test 11: Create multiple Percolation objects at the same time
+jetbrains_academy.ChessQueen 11: Create multiple Percolation objects at the same time
          (to make sure you didn't store data in static variables)
 ==> passed
 
-Test 12: Open predetermined list of sites using file inputs,
+jetbrains_academy.ChessQueen 12: Open predetermined list of sites using file inputs,
          but change the order in which methods are called
   *  filename = input8.txt;  order =     isFull(),     isOpen(), percolates()
   *  filename = input8.txt;  order =     isFull(), percolates(),     isOpen()
@@ -167,7 +167,7 @@ Test 12: Open predetermined list of sites using file inputs,
   *  filename = input8.txt;  order = percolates(),     isFull(),     isOpen()
 ==> passed
 
-Test 13: Call all methods in random order until just before system percolates
+jetbrains_academy.ChessQueen 13: Call all methods in random order until just before system percolates
   *  n = 3
   *  n = 5
   *  n = 7
@@ -176,7 +176,7 @@ Test 13: Call all methods in random order until just before system percolates
   *  n = 50
 ==> passed
 
-Test 14: Call all methods in random order until almost all sites are open,
+jetbrains_academy.ChessQueen 14: Call all methods in random order until almost all sites are open,
          but with inputs not prone to backwash
   *  n = 3
   *  n = 5
@@ -186,7 +186,7 @@ Test 14: Call all methods in random order until almost all sites are open,
   *  n = 50
 ==> passed
 
-Test 15: Call all methods in random order until all sites are open,
+jetbrains_academy.ChessQueen 15: Call all methods in random order until all sites are open,
          allowing open() to be called on a site more than once
          (these inputs are prone to backwash)
   *  n = 3
@@ -210,28 +210,28 @@ Testing correctness of PercolationStats
 *-----------------------------------------------------------
 Running 11 total tests.
 
-Test 1: Test that PercolationStats creates trials Percolation objects, each of size n-by-n
+jetbrains_academy.ChessQueen 1: jetbrains_academy.ChessQueen that PercolationStats creates trials Percolation objects, each of size n-by-n
   * n =  20, trials =  10
   * n =  50, trials =  20
   * n = 100, trials =  50
   * n =  64, trials = 150
 ==> passed
 
-Test 2: Test that PercolationStats calls open() until system percolates
+jetbrains_academy.ChessQueen 2: jetbrains_academy.ChessQueen that PercolationStats calls open() until system percolates
   * n =  20, trials =  10
   * n =  50, trials =  20
   * n = 100, trials =  50
   * n =  64, trials = 150
 ==> passed
 
-Test 3: Test that PercolationStats does not call open() after system percolates
+jetbrains_academy.ChessQueen 3: jetbrains_academy.ChessQueen that PercolationStats does not call open() after system percolates
   * n =  20, trials =  10
   * n =  50, trials =  20
   * n = 100, trials =  50
   * n =  64, trials = 150
 ==> passed
 
-Test 4: Test that mean() is consistent with the number of intercepted calls to open()
+jetbrains_academy.ChessQueen 4: jetbrains_academy.ChessQueen that mean() is consistent with the number of intercepted calls to open()
         on blocked sites
   * n =  20, trials =  10
   * n =  50, trials =  20
@@ -239,7 +239,7 @@ Test 4: Test that mean() is consistent with the number of intercepted calls to o
   * n =  64, trials = 150
 ==> passed
 
-Test 5: Test that stddev() is consistent with the number of intercepted calls to open()
+jetbrains_academy.ChessQueen 5: jetbrains_academy.ChessQueen that stddev() is consistent with the number of intercepted calls to open()
         on blocked sites
   * n =  20, trials =  10
   * n =  50, trials =  20
@@ -247,21 +247,21 @@ Test 5: Test that stddev() is consistent with the number of intercepted calls to
   * n =  64, trials = 150
 ==> passed
 
-Test 6: Test that confidenceLo() and confidenceHigh() are consistent with mean() and stddev()
+jetbrains_academy.ChessQueen 6: jetbrains_academy.ChessQueen that confidenceLo() and confidenceHigh() are consistent with mean() and stddev()
   * n =  20, trials =  10
   * n =  50, trials =  20
   * n = 100, trials =  50
   * n =  64, trials = 150
 ==> passed
 
-Test 7: Check whether exception is thrown if either n or trials is out of bounds
+jetbrains_academy.ChessQueen 7: Check whether exception is thrown if either n or trials is out of bounds
   * n = -23, trials =  42
   * n =  23, trials =   0
   * n = -42, trials =   0
   * n =  42, trials =  -1
 ==> passed
 
-Test 8: Create two PercolationStats objects at the same time and check mean()
+jetbrains_academy.ChessQueen 8: Create two PercolationStats objects at the same time and check mean()
         (to make sure you didn't store data in static variables)
   * n1 =  50, trials1 =  10, n2 =  50, trials2 =   5
   * n1 =  50, trials1 =   5, n2 =  50, trials2 =  10
@@ -271,7 +271,7 @@ Test 8: Create two PercolationStats objects at the same time and check mean()
   * n1 =  15, trials1 = 100, n2 =  50, trials2 =  10
 ==> passed
 
-Test 9: Check that the methods return the same value, regardless of
+jetbrains_academy.ChessQueen 9: Check that the methods return the same value, regardless of
         the order in which they are called
   * n =  20, trials =  10
   * n =  50, trials =  20
@@ -279,14 +279,14 @@ Test 9: Check that the methods return the same value, regardless of
   * n =  64, trials = 150
 ==> passed
 
-Test 10: Check for any calls to StdRandom.setSeed()
+jetbrains_academy.ChessQueen 10: Check for any calls to StdRandom.setSeed()
   * n = 20, trials = 10
   * n = 20, trials = 10
   * n = 40, trials = 10
   * n = 80, trials = 10
 ==> passed
 
-Test 11: Check distribution of number of sites opened until percolation
+jetbrains_academy.ChessQueen 11: Check distribution of number of sites opened until percolation
   * n = 2, trials = 100000
   * n = 3, trials = 100000
   * n = 4, trials = 100000
@@ -305,7 +305,7 @@ Computing memory of PercolationStats
 *-----------------------------------------------------------
 Running 4 total tests.
 
-Test 1a-1d: Memory usage as a function of trials for n = 100
+jetbrains_academy.ChessQueen 1a-1d: Memory usage as a function of trials for n = 100
             (max allowed: 8*trials + 128 bytes)
 
             trials        bytes
@@ -333,7 +333,7 @@ Computing memory of Percolation
 *-----------------------------------------------------------
 Running 4 total tests.
 
-Test 1a-1d: Check that total memory <= 17 n^2 + 128 n + 1024 bytes
+jetbrains_academy.ChessQueen 1a-1d: Check that total memory <= 17 n^2 + 128 n + 1024 bytes
 
                  n        bytes
 --------------------------------------------
@@ -347,7 +347,7 @@ Test 1a-1d: Check that total memory <= 17 n^2 + 128 n + 1024 bytes
 Estimated student memory = 17.00 n^2 + 32.00 n + 296.00   (R^2 = 1.000)
 
 
-Test 2 (bonus): Check that total memory <= 11 n^2 + 128 n + 1024 bytes
+jetbrains_academy.ChessQueen 2 (bonus): Check that total memory <= 11 n^2 + 128 n + 1024 bytes
    -  failed memory test for n = 64
 ==> FAILED
 
@@ -366,7 +366,7 @@ Timing Percolation
 *-----------------------------------------------------------
 Running 9 total tests.
 
-Test 1a-1e: Create an n-by-n percolation system; open sites at random until
+jetbrains_academy.ChessQueen 1a-1e: Create an n-by-n percolation system; open sites at random until
             the system percolates. Count calls to connected(), union() and
             find() in WeightedQuickUnionUF.
                                                  2 * connected()

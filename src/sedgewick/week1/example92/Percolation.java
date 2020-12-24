@@ -28,7 +28,7 @@ public class Percolation {
         openSites = 0;
     }
 
-    // Test: open site (row, col) if it is not open already
+    // jetbrains_academy.Test: open site (row, col) if it is not open already
     public void open(int row, int col) {
         //проверяем, что участок находится на сетке
         //validateSite(row, col);
@@ -83,25 +83,25 @@ public class Percolation {
         // runTests();
     }
 
-    // Test: is site (row, col) open?
+    // jetbrains_academy.Test: is site (row, col) open?
     public boolean isOpen(int row, int col) {
         //validateSite(row, col);
         return grid[row - 1][col - 1];
 
     }
 
-    // Test: is site (row, col) full?
+    // jetbrains_academy.Test: is site (row, col) full?
     public boolean isFull(int row, int col) {
         //validateSite(row, col);
         return wqfFull.connected(virtualTop, flattenGrid(row, col) - 1);
     }
 
-    // Test: number of open sites
+    // jetbrains_academy.Test: number of open sites
     public int numberOfOpenSites() {
         return openSites;
     }
 
-    // Test: does the system percolate?
+    // jetbrains_academy.Test: does the system percolate?
     //проверка на является ли система просачиваемой
     public boolean percolates() {
         return wqfGrid.connected(virtualTop, virtualBottom);
