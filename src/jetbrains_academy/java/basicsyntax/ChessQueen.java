@@ -1,4 +1,4 @@
-package jetbrains_academy;
+package jetbrains_academy.java.basicsyntax;
 
 import java.util.ArrayList;
 import java.util.List;
