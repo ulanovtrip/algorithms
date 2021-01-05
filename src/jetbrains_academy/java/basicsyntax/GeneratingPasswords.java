@@ -11,32 +11,43 @@ public class GeneratingPasswords {
         int digits = scanner.nextInt();
         int size = scanner.nextInt();
         int includesSymbols = size;
+        char[] output = generate(upperCaseLetters, lowerCaseLetters, digits, size, includesSymbols);
+        clearAndPrint(output);
+    }
 
+    public static char[] generate(int upperCaseLetters, int lowerCaseLetters, int digits, int size, int includesSymbols) {
         char[] output = new char[size];
         int step = 0;
-        char a = 'A', b = 'b';
+        char a = 'A';
+        char b = 'b';
         char num = '0';
         if (lowerCaseLetters == 0 && upperCaseLetters == 0 && digits == 0 && size == 1) {
-            System.out.print("$");
-            return;
+            output[0] = '$';
+            return output;
         }
         while (true) {
             if (upperCaseLetters > 0) {
-                if (a == 'Z') a = 'A';
+                if (a == 'Z') {
+                    a = 'A';
+                }
                 a = (char) (a + 1);
                 output[step] = a;
                 step += 1;
                 upperCaseLetters -= 1;
                 includesSymbols -= 1;
             } else if (lowerCaseLetters > 0) {
-                if (b == 'z') b = 'b';
+                if (b == 'z') {
+                    b = 'b';
+                }
                 b = (char) (b + 1);
                 output[step] = b;
                 step += 1;
                 lowerCaseLetters -= 1;
                 includesSymbols -= 1;
             } else if (digits > 0) {
-                if (num == '9') num = '0';
+                if (num == '9') {
+                    num = '0';
+                }
                 num = (char) (num + 1);
                 output[step] = num;
                 step += 1;
@@ -45,19 +56,28 @@ public class GeneratingPasswords {
             }
 
             if (lowerCaseLetters + upperCaseLetters + digits == 0 && size > 1) {
-                if (step == size) break;
-                if (num == '9') num = '0';
+                if (step == size) {
+                    break;
+                }
+                if (num == '9') {
+                    num = '0';
+                }
                 num = (char) (num + 1);
                 output[step] = num;
                 step += 1;
                 includesSymbols -= 1;
             }
 
-            if (includesSymbols == 0) break;
+            if (includesSymbols == 0) {
+                break;
+            }
         }
 
-        String out = Arrays.toString(output);
+        return output;
+    }
 
+    public static void clearAndPrint(char[] output) {
+        String out = Arrays.toString(output);
         String clear = out.replaceAll(", ", "");
         String clear2 = clear.replaceAll("\\[", "");
         String clear3 = clear2.replaceAll("]", "");
