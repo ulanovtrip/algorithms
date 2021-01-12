@@ -65,6 +65,11 @@ public class Main {
             }
         }
 
+        if (countZeros == countX && countZeros == emptyCell && isXWins(chars) && !isZeroWins(chars)) {
+            System.out.println("Game not finished");
+            return;
+        }
+
         if (isZeroWins(chars) && !isXWins(chars)) {
             System.out.println("O wins");
             return;
