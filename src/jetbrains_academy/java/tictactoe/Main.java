@@ -9,7 +9,68 @@ public class Main {
         System.out.println("Enter cells: " + userInput);
         char[] chars = userInput.toCharArray();
         printFields(chars);
-        analiseInput(chars);
+        String userCoordinates;
+        char[] coordinatesInChars = new char[2];
+
+        boolean isTwoElements = false;
+        while (!isTwoElements) {
+            userCoordinates = scanner.nextLine();
+            System.out.println("Enter the coordinates: " + userCoordinates);
+            coordinatesInChars = userCoordinates.replaceAll(" ", "").toCharArray();
+            isTwoElements = checkInputErrors(coordinatesInChars, chars);
+        }
+
+        char[] updateMatrix = updateMatrix(coordinatesInChars, chars);
+        printFields(updateMatrix);
+        //analiseInput(updateMatrix);
+    }
+
+    public static char[] updateMatrix(char[] coordinatesInChars, char[] matrix) {
+        int row = convertCharInInt(coordinatesInChars[0]);
+        int column = convertCharInInt(coordinatesInChars[1]);
+        int index = getIndex(row, column);
+        matrix[index] = 'X';
+        return matrix;
+    }
+
+    public static int getIndex(int row, int column) {
+        return (((row - 1) * 3) + column) - 1;
+    }
+
+    public static boolean checkInputErrors(char[] coordinatesInChars, char[] chars) {
+        String regexDigits = "[1-3]";
+        boolean flag = true;
+
+        if (coordinatesInChars.length > 2) {
+            System.out.println("You should enter numbers!");
+            return false;
+        }
+
+        try {
+            if (convertCharInInt(coordinatesInChars[0]) > 3 || convertCharInInt(coordinatesInChars[1]) > 3) {
+                System.out.println("Coordinates should be from 1 to 3!");
+                return false;
+            } else if (!isEmptyCell(chars, convertCharInInt(coordinatesInChars[0]), convertCharInInt(coordinatesInChars[1]))) {
+                flag = false;
+                System.out.println("This cell is occupied! Choose another one!");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("You should enter numbers!");
+            return false;
+        }
+        return flag;
+    }
+
+    public static boolean isEmptyCell(char[] chars, int row, int column) {
+        int index = getIndex(row, column);
+        if (chars[index] != '_') {
+            return false;
+        }
+        return true;
+    }
+
+    public static int convertCharInInt(char elem) {
+        return Integer.parseInt(String.valueOf(elem));
     }
 
     public static boolean isZerosMoreThanX(int countZeros, int countX) {
