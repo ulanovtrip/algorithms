@@ -1,6 +1,6 @@
-package jetbrains_academy.java;
+package jetbrains_academy.java.polymorphism;
 
-public class Test {
+public class AboutNumberGenerator {
 
     public static void main(String args[]) {
         BaseNumberGenerator generator = new MagicNumberGenerator(10);
