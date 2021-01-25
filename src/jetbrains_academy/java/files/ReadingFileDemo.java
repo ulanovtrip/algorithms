@@ -11,7 +11,8 @@ public class ReadingFileDemo {
     }
 
     public static void main(String[] args) {
-        String pathToHelloWorldJava = "src/jetbrains_academy/java/basicsyntax/ArgsFrom.java";
+        //String pathToHelloWorldJava = "src/jetbrains_academy/java/basicsyntax/ArgsFrom.java";
+        String pathToHelloWorldJava = "src/jetbrains_academy/java/files/dataset_91069.txt";
         try {
             System.out.println(readFileAsString(pathToHelloWorldJava));
         } catch (IOException e) {

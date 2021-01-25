@@ -9,7 +9,7 @@ public class WriteInFile {
         File file = new File("src/jetbrains_academy/java/files/writer_test.txt");
         try {
             FileWriter fileWriter = new FileWriter(file, true);
-            int step = 10;
+            int step = 100;
             while (step > 0) {
                 fileWriter.write("Putin burglar! \n");
                 fileWriter.write("Freedom!!!\n");
