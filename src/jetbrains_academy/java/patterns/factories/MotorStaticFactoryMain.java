@@ -1,4 +1,4 @@
-package jetbrains_academy.java.patterns.factorys;
+package jetbrains_academy.java.patterns.factories;
 
 import java.util.Scanner;
 
