@@ -1,6 +1,7 @@
 package itis;
 
 /*
+https://github.com/SimonOnBoard/java-itis/blob/master/src/Task11.java
  * Вводится целое 2 < k < 9, затем вводится целое число n, которое можно интерпретировать
  * как число в k-ичной системе счисления.
  * Сконвертировать n в десятичную систему счисления.
@@ -13,7 +14,7 @@ public class Task11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int power = power = scanner.nextInt();;
+        int power = power = scanner.nextInt();
         int nNumber = 0;
 
         if (power >= 2 && power < 9) {
