@@ -26,7 +26,7 @@ public class Circuit {
         int firstMinLengthToStart = Math.min(offsetFirst, lengthOfRoad - offsetFirst);
         int secondMinLengthToStart = Math.min(offsetSecond, lengthOfRoad - offsetSecond);
 
-        int sumOfMin = firstMinLengthToStart + secondMinLengthToStart;
+        int sumOfMin = Math.abs(firstMinLengthToStart + secondMinLengthToStart);
 
         int result = Math.min(sumOfMin, lengthOfRoad - (sumOfMin));
         System.out.println(result);

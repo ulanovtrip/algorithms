@@ -1,13 +1,21 @@
 package itis.topic_3;
 
-import java.util.Scanner;
-
+/*
+111
+112
+113
+114
+* */
 public class TrokoBochki {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n;
-        n = sc.nextInt();
 
+        for (int i = 0; i < 301; i++) {
+            giveWord(i);
+        }
+
+    }
+
+    public static void giveWord(int n) {
         if (n <= 1000 && n > 20) {
             if (n % 10 == 1) {
                 System.out.println(n + " bochka");
@@ -24,6 +32,5 @@ public class TrokoBochki {
             } else
                 System.out.println(n + " bochek");
         }
-
     }
 }
