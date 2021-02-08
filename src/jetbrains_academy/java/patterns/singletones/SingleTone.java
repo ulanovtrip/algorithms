@@ -1,4 +1,4 @@
-package jetbrains_academy.java.patterns;
+package jetbrains_academy.java.patterns.singletones;
 
 public class SingleTone {
     public static void main(String[] args) {
