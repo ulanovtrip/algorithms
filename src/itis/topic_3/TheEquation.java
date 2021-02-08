@@ -8,6 +8,6 @@ public class TheEquation {
         int memberA = scanner.nextInt();
         int memberB = scanner.nextInt();
 
-        int solution =
+        //int solution =
     }
 }
