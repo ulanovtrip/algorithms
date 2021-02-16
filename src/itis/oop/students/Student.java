@@ -1,6 +1,9 @@
-package itis.oop;
+package itis.oop.students;
+
+import itis.oop.courses.CourseScore;
 
 public class Student {
+
     private String fullName;
     private int age;
     private String groupName;
@@ -47,5 +50,14 @@ public class Student {
 
     public Student(String fullName, int age, String groupName) {
         this(fullName, age, groupName, new CourseScore[100]);
+    }
+
+    @Override
+    public String toString() {
+        return "Student {" +
+                "fullName = '" + fullName + '\'' +
+                ", age=" + age +
+                ", groupName = '" + groupName + '\'' +
+                '}';
     }
 }

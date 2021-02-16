@@ -1,9 +1,10 @@
-package itis.oop;
+package itis.oop.tutors;
 
 import java.util.Random;
 
 public class TutorGenerator {
-    public static String[] names = {"Никита Матвеев",
+    public static String[] names = {
+            "Никита Матвеев",
             "Евгений Степанов",
             "Вера Романова",
             "София Новикова",

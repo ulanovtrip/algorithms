@@ -1,4 +1,4 @@
-package itis.oop;
+package itis.oop.courses;
 
 import java.util.Random;
 

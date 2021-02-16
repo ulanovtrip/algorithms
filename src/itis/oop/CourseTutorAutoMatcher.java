@@ -1,5 +1,8 @@
 package itis.oop;
 
+import itis.oop.courses.Course;
+import itis.oop.tutors.Tutor;
+
 import java.util.Random;
 
 public class CourseTutorAutoMatcher {

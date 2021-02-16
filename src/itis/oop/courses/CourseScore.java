@@ -1,4 +1,4 @@
-package itis.oop;
+package itis.oop.courses;
 
 public class CourseScore {
     private Course course;
@@ -27,5 +27,13 @@ public class CourseScore {
 
     public CourseScore(Course course) {
         this(course, 0.0d);
+    }
+
+    @Override
+    public String toString() {
+        return "CourseScore{" +
+                "course=" + course +
+                ", score=" + score +
+                '}';
     }
 }

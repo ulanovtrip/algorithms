@@ -1,4 +1,7 @@
-package itis.oop;
+package itis.oop.courses;
+
+import itis.oop.students.Student;
+import itis.oop.tutors.Tutor;
 
 import java.util.Arrays;
 
@@ -57,7 +60,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Course {" +
                 "name='" + name + '\'' +
                 ", hours=" + hours +
                 ", tutor=" + tutor +

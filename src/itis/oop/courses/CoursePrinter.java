@@ -1,9 +1,9 @@
-package itis.oop;
+package itis.oop.courses;
 
 public class CoursePrinter {
 
     public void printCourses(Course[] courses, int i) {
-        switch (i){
+        switch (i) {
             case 3:
                 for (Course course : courses) {
                     printCoursesFullInfo(course);

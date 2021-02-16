@@ -1,4 +1,4 @@
-package itis.oop;
+package itis.oop.tutors;
 
 public class TutorPrinter {
 

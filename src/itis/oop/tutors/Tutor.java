@@ -1,4 +1,6 @@
-package itis.oop;
+package itis.oop.tutors;
+
+import itis.oop.courses.Course;
 
 public class Tutor {
     private String fullName;
@@ -8,8 +10,8 @@ public class Tutor {
 
     @Override
     public String toString() {
-        return "Tutor{" +
-                "fullName='" + fullName + '\'' +
+        return "Tutor {" +
+                " fullName='" + fullName + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
                 '}';
