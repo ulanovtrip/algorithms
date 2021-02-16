@@ -3,6 +3,7 @@ package itis.oop;
 import itis.oop.courses.*;
 import itis.oop.statistic.PrintRatingCourses;
 import itis.oop.statistic.PrintRatingStudents;
+import itis.oop.statistic.PrintRatingTutors;
 import itis.oop.students.Student;
 import itis.oop.students.StudentGenerator;
 import itis.oop.students.StudentsPrinter;
@@ -37,9 +38,7 @@ public class Main {
         courseScorePrinter.printCourses(courseScores, 3);
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         CourseTutorAutoMatcher courseTutorAutoMatcher = new CourseTutorAutoMatcher();
-        CourseStudentAutoMatcher courseStudentAutoMatcher = new CourseStudentAutoMatcher();
         courseTutorAutoMatcher.autoMatch(courses, tutors);
-        courseStudentAutoMatcher.autoMatch(courses, students);
         System.out.println("==========================================================================================");
         tutorPrinter.printTutors(tutors, 3);
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -51,5 +50,9 @@ public class Main {
 
         PrintRatingStudents printRatingStudents = new PrintRatingStudents();
         printRatingStudents.printRatingOfStudents(students);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        PrintRatingTutors printRatingTutors = new PrintRatingTutors();
+        printRatingTutors.printStatisticTutors(tutors);
     }
 }
