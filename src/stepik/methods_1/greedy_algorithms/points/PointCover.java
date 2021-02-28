@@ -1,8 +1,11 @@
-package stepik.methods_1.greedy_algorithms;
+package stepik.methods_1.greedy_algorithms.points;
 
 // https://razilov-code.ru/2018/10/16/cover-intervals-with-points/
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 class Spot implements Comparable {
     int numOtrezok;
